@@ -1,37 +1,17 @@
-/*
-** file: js/options.js
-** description: javascript code for "html/options.html" page
-*/
+$("form").submit(function (e) {
+      e.preventDefault(); // this will prevent from submitting the form.
+});
 
-function init_options () {
-    console.log("function: init_options");
+$( "#fitbit_credentials_submit" ).click(function() {
+  localStorage.setItem("client_id", $("#client_id").val());
+  localStorage.setItem("secret", $("#secret").val());
 
-    //load currently stored options configuration
-    var favorite_movie = localStorage['favorite_movie'];
+  url = "https://www.fitbit.com/oauth2/authorize?"
+  url = url + "response_type=code&";
+  url = url + "client_id=" + localStorage.getItem("client_id") + "&";
+  url = url + "redirect_uri=" + chrome.extension.getURL('/html/authorizer.html') + "&";
+  url = url + "scope=activity";
+  console.log(url);
+  window.location.replace(url);
+});
 
-    //set the current state of the options form elements to match the stored options values
-    //favorite_movie
-    if (favorite_movie) {
-        var favorite_movie_dropdown = document.getElementById('favorite-movie-dropdown');
-        for (var i=0; i < favorite_movie_dropdown.children.length; i++) {
-            var option = favorite_movie_dropdown.children[i];
-            if (option.value == favorite_movie) {
-                option.selected = 'true';
-                break;
-            }
-        }
-    }
-}
-
-function save_options () {
-    console.log("function: save_options");
-
-    //favorite-movie-dropdown
-    var favorite_movie = document.getElementById('favorite-movie-dropdown').children[document.getElementById('favorite-movie-dropdown').selectedIndex].value;
-    localStorage['favorite_movie'] = favorite_movie;
-    console.log("favorite_movie = " + favorite_movie);
-}
-
-//bind events to dom elements
-document.addEventListener('DOMContentLoaded', init_options);
-document.querySelector('#save-options-button').addEventListener('click', save_options);

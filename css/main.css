@@ -3,29 +3,32 @@
 ** description: custom styling for "html/main.html" file
 */
 
-div#main-outer {
-    width: 300px;
-    margin: 5px;
-    background: #DDD;
-    border-radius: 5px;
+body{
+  color: #4D4D94;
+  background-color: #4D4D94;
+}
+h1{
+  font-size: 2em;
 }
 
-div#main-inner {
-    padding: 8px;
+.container {
+   margin-top: 40px;
 }
 
-div#main-title {
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
+.box{
+  background-color: #FFFFDB;
+  padding: 25px;
+  padding-bottom: 40px;
+  border-radius: 15px;
 }
 
-img#main-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+form{
+  background-color: #FFFFDB;
+  padding: 25px;
+  padding-bottom: 40px;
+  border-radius: 15px;
 }
 
-div#main-about-text {
-    text-align: center;
+label{
+  font-size: 1.2em;
 }
