@@ -11,6 +11,7 @@
         "default_icon": {
             "19": "images/high_heel.png",
             "38": "images/high_heel.png",
+            "48": "images/high_heel.png",
             "128": "images/high_heel.png"
         },
         "default_popup": "html/main.html"
@@ -21,12 +22,12 @@
       "scripts": [ "js/background.js", "js/steps.js"]
     },
 
-    // "content_scripts": [
-    //   {
-    //     "matches": ["http://www.google.com/*"],
-    //     "js": ["js/background.js"]
-    //   }
-    // ],
+    "content_scripts": [
+      {
+        "matches": ["http://www.google.com/*"],
+        "js": ["js/background.js"]
+      }
+    ],
 
     "permissions": [
       "storage",
