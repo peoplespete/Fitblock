@@ -5,7 +5,7 @@ if (localStorage.getItem("steps") != null && localStorage.getItem("goal") != nul
   $("#already_configured").text("You've already configured your Fitbit, way to go!");
 }
 
-
+$("#callback_url").text(chrome.extension.getURL('/html/authorizer.html'));
 
 $("form").submit(function (e) {
       e.preventDefault(); // this will prevent from submitting the form.
@@ -21,7 +21,6 @@ $( "#fitbit_credentials_submit" ).click(function() {
   url = url + "redirect_uri=" + chrome.extension.getURL('/html/authorizer.html') + "&";
   url = url + "scope=activity";
   console.log(url);
-  debugger;
   window.location.replace(url);
 });
 

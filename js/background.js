@@ -31,7 +31,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       url = url + "grant_type=" + "authorization_code" + "&";
       url = url + "redirect_uri=" + chrome.extension.getURL('/html/authorizer.html') + "&";
       url = url + "code=" + localStorage.getItem("code");
-
+alert("a")
       $.ajax({
 
         url: url,
@@ -42,6 +42,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         contentType: 'application/x-www-form-urlencoded',
 
         success: function (data) {
+alert("b")
           localStorage.setItem("access_token", data.access_token);
           $.ajax({
 
@@ -54,6 +55,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             contentType: 'application/x-www-form-urlencoded',
 
             success: function (data) {
+alert("c")
               console.log("Daily Goal:" + data.goals.steps);
               localStorage.setItem("goal", data.goals.steps);
 
@@ -67,6 +69,7 @@ chrome.webRequest.onBeforeRequest.addListener(
                 contentType: 'application/x-www-form-urlencoded',
 
                 success: function (data) {
+alert("d")
                   console.log("Steps Count:" + data.summary.steps);
                   localStorage.setItem("steps", data.summary.steps);
                   var percentage_completion = Math.floor((localStorage.getItem("steps") / localStorage.getItem("goal")) * 100);
@@ -79,6 +82,8 @@ chrome.webRequest.onBeforeRequest.addListener(
                   }
                 },
                 error: function (e) {
+alert("e")
+                  
                   console.log("failure to get step count!!!");
                   console.log(e);
                   chrome.tabs.update(details.tabId, {url: chrome.extension.getURL('/html/disallowed.html')});
@@ -87,6 +92,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
             },
             error: function (e) {
+alert("f")
               console.log("failure to get goal!!!");
               console.log(e);
               if(e.responseText.includes("Access token invalid or expired")){
@@ -97,10 +103,12 @@ chrome.webRequest.onBeforeRequest.addListener(
 
         },
         error: function (e) {
+alert("g");
+alert(e);
+debugger;
           console.log(e);
         },
       });
-
 
     },
     {urls: ["*://*.facebook.com/"]},

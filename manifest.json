@@ -19,7 +19,7 @@
 
     //additional
     "background": {
-      "scripts": [ "js/background.js", "js/steps.js"]
+      "scripts": ["js/jquery-1.9.1.js","js/background.js", "js/steps.js"]
     },
 
     "content_scripts": [
