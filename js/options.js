@@ -21,6 +21,7 @@ $( "#fitbit_credentials_submit" ).click(function() {
   url = url + "redirect_uri=" + chrome.extension.getURL('/html/authorizer.html') + "&";
   url = url + "scope=activity";
   console.log(url);
+  debugger;
   window.location.replace(url);
 });
 
