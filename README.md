@@ -16,7 +16,8 @@ Note where you've saved it.
 
 ### Chrome
 
-Install the extension files via developer mode in [Chrome Extension Manager](chrome://extensions/)
+Install the extension files via _Developer Mode_ in [Chrome Extension Manager](chrome://extensions/)
+Click _Load Unpacked Extension..._
 ![Chrome Extension Install](/images/screenshots/one.png?raw=true)
 
 
