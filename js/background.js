@@ -85,6 +85,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       });
 
     },
+
+    // MAKE URLS CONFIGURABLE!
     {urls: ["*://*.facebook.com/"]},
     ["blocking"]);
 
