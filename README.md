@@ -16,14 +16,16 @@ Note where you've saved it.
 
 ### Chrome
 
+Install the extension files via developer mode in [Chrome Extension Manager](chrome://extensions/)
+![Chrome Extension Install](/images/screenshots/one.png?raw=true)
 
-![Alt text](/images/file.jpg?raw=true)
+
 ### Fitbit
 
 ### Chrome
 
 
-#### Bugs:
+#### Known Bugs:
 
 Right now the Fitbit API Access Token will eventually expire.
 
