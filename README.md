@@ -37,8 +37,8 @@ Fill in all the required fields
 
 Paste the Callback URL you copied from the options page in Callback URL field
 
-Click _Register_
 ![App Registration via Fitbit](/images/screenshots/four.png?raw=true)
+Click _Register_
 
 Copy your _OAuth 2.0 Client ID_ and your _Client (Consumer) Secret_
 ![Copy Fitbit OAuth 2.0 Credentials](/images/screenshots/five.png?raw=true)
